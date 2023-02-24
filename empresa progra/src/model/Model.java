@@ -10,5 +10,7 @@ package model;
  * @author andres barrera
  */
 public class Model {
+	private int double;
+	private String carro;
 
 }

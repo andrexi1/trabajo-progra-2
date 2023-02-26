@@ -36,5 +36,4 @@ public class Supplier extends Person{
     public void setWebSite(String webSite) {
         this.webSite = webSite;
     }
-
 }

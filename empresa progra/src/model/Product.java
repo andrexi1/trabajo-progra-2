@@ -7,6 +7,7 @@ package model;
 
 public class Product {
     
+    private String name;
     private int id;
     private int currentPrice;
     private int stock;
@@ -14,12 +15,27 @@ public class Product {
     private String category;
 
 
-    public Product(int id, int currentPrice, int stock, Supplier personSupplier, String category) {
+    public Product(String name, int id, int currentPrice, int stock, Supplier personSupplier, String category) {
+        this.name = name;
         this.id = id;
         this.currentPrice = currentPrice;
         this.stock = stock;
         this.personSupplier = personSupplier;
         this.category = category;
+    }
+
+        /**
+     * @return int return the id
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 
     

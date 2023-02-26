@@ -1,6 +1,11 @@
 package model;
 
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -13,6 +18,9 @@ public class SuperMarket {
     private List<Product> newProduct;
     private List<Customer> personCustomer;
     private List<Supplier> personSupplier;
+
+    public SuperMarket() {
+    }
 
     /**
      * @param newProduct
@@ -66,6 +74,22 @@ public class SuperMarket {
         this.personSupplier = personSupplier;
     }
 
-    
-
+    public Product addProduct(Product productSell) throws IOException {
+        newProduct = new ArrayList<>() ;
+        newProduct.add(productSell);
+        File archive = new File("product.txt");
+        if(!archive.exists()){
+            try {
+                archive.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else{
+            try (BufferedWriter archiveProduct = new BufferedWriter(new FileWriter("product.txt",true))) {
+                archiveProduct.write(String.valueOf(productSell));
+            }
+        }
+        
+        return (Product) newProduct;
+    }
 }

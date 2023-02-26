@@ -36,4 +36,11 @@ public class Supplier extends Person{
     public void setWebSite(String webSite) {
         this.webSite = webSite;
     }
+
+    @Override
+    public String toString() {
+        return "Supplier [webSite=" + webSite + "]";
+    }
+
+    
 }

@@ -86,4 +86,12 @@ public class Person  {
         this.addresses = addresses;
     }
 
+    @Override
+    public String toString() {
+        return "Person [name=" + name + ", rut=" + rut + ", numberPhone=" + numberPhone + ", addresses=" + addresses
+                + "]";
+    }
+
+    
+
 }

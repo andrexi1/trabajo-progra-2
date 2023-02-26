@@ -74,6 +74,11 @@ public class SuperMarket {
         this.personSupplier = personSupplier;
     }
 
+    /**
+     * @param productSell
+     * @return
+     * @throws IOException
+     */
     public Product addProduct(Product productSell) throws IOException {
         newProduct = new ArrayList<>() ;
         newProduct.add(productSell);
@@ -91,5 +96,11 @@ public class SuperMarket {
         }
         
         return (Product) newProduct;
+    }
+
+    @Override
+    public String toString() {
+        return "SuperMarket [newProduct=" + newProduct + ", personCustomer=" + personCustomer + ", personSupplier="
+                + personSupplier + "]";
     }
 }

@@ -111,4 +111,12 @@ public class Product {
         this.category = category;
     }
 
+    @Override
+    public String toString() {
+        return "Product [name=" + name + ", id=" + id + ", currentPrice=" + currentPrice + ", stock=" + stock
+                + ", personSupplier=" + personSupplier + ", category=" + category + "]";
+    }
+
+    
+
 }

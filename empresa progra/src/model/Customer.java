@@ -19,4 +19,10 @@ public class Customer extends Person {
         super(name, rut, numberPhone, addresses);
     }
 
+    @Override
+    public String toString() {
+        return "Customer []";
+    }
+
+    
 }

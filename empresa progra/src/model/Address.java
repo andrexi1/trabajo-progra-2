@@ -118,4 +118,12 @@ public class Address {
         this.licensePlate = licensePlate;
     }
 
+    @Override
+    public String toString() {
+        return "Address [city=" + city + ", neighborhood=" + neighborhood + ", addressTypeOfRoad=" + addressTypeOfRoad
+                + ", quadrant=" + quadrant + ", generatingPathway=" + generatingPathway + ", licensePlate="
+                + licensePlate + "]";
+    }
+    
+
 }

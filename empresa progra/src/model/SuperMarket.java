@@ -1,37 +1,65 @@
 package model;
 
+
+import java.util.List;
+
 /*
  * @author Andres barrera-Javier Lopez-Diego Patiño
  * 
  */
 
 public class SuperMarket {
-    private Product[] newProduct;
-    private Customer[] personCustomer;
-    private Supplier[] personSupplier;
-    public SuperMarket(Product[] newProduct, Customer[] personCustomer, Supplier[] personSupplier) {
+    private List<Product> newProduct;
+    private List<Customer> personCustomer;
+    private List<Supplier> personSupplier;
+    /**
+     * @param newProduct
+     * @param personCustomer
+     * @param personSupplier
+     */
+    public SuperMarket(List<Product> newProduct, List<Customer> personCustomer,
+            List<Supplier> personSupplier) {
         this.newProduct = newProduct;
         this.personCustomer = personCustomer;
         this.personSupplier = personSupplier;
     }
-    public Product[] getNewProduct() {
+    /**
+     * @return
+     */
+    public List<Product> getNewProduct() {
         return newProduct;
     }
-    public void setNewProduct(Product[] newProduct) {
+    /**
+     * @param newProduct
+     */
+    public void setNewProduct(List<Product> newProduct) {
         this.newProduct = newProduct;
     }
-    public Customer[] getPersonCustomer() {
+    /**
+     * @return
+     */
+    public List<Customer> getPersonCustomer() {
         return personCustomer;
     }
-    public void setPersonCustomer(Customer[] personCustomer) {
+    /**
+     * @param personCustomer
+     */
+    public void setPersonCustomer(List<Customer> personCustomer) {
         this.personCustomer = personCustomer;
     }
-    public Supplier[] getPersonSupplier() {
+    /**
+     * @return
+     */
+    public List<Supplier> getPersonSupplier() {
         return personSupplier;
     }
-    public void setPersonSupplier(Supplier[] personSupplier) {
+    /**
+     * @param personSupplier
+     */
+    public void setPersonSupplier(List<Supplier> personSupplier) {
         this.personSupplier = personSupplier;
     }
 
+    
 
 }

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 /*
  * @author Andres barrera-Javier Lopez-Diego Patiño
  * 
@@ -9,12 +11,12 @@ public class Person  {
     private String name;
     private double rut;
     private int numberPhone;
-    private Address [] addresses;
+    private List<Address> addresses;
 
     
     
 
-    public Person(String name, double rut, int numberPhone, Address[] addresses) {
+    public Person(String name, double rut, int numberPhone, List<Address> addresses) {
         this.name = name;
         this.rut = rut;
         this.numberPhone = numberPhone;
@@ -66,14 +68,14 @@ public class Person  {
     /**
      * @return Address [] return the addresses
      */
-    public Address [] getAddresses() {
+    public List<Address> getAddresses() {
         return addresses;
     }
 
     /**
      * @param addresses the addresses to set
      */
-    public void setAddresses(Address [] addresses) {
+    public void setAddresses(List<Address> addresses) {
         this.addresses = addresses;
     }
 

@@ -11,6 +11,12 @@ public class Product {
     private int stock;
     private Supplier[] personSupplier;
 
+    /**
+     * @param id
+     * @param currentPrice
+     * @param stock
+     * @param personSupplier
+     */
     public Product(int id, int currentPrice, int stock, Supplier[] personSupplier) {
         this.id = id;
         this.currentPrice = currentPrice;

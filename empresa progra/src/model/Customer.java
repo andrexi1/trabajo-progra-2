@@ -9,6 +9,12 @@ import java.util.List;
 
 public class Customer extends Person {
 
+    /**
+     * @param name
+     * @param rut
+     * @param numberPhone
+     * @param addresses
+     */
     public Customer(String name, double rut, int numberPhone, List<Address> addresses) {
         super(name, rut, numberPhone, addresses);
     }

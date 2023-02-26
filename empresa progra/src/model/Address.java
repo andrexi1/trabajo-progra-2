@@ -15,6 +15,14 @@ public class Address {
 
     
 
+    /**
+     * @param city
+     * @param neighborhood
+     * @param addressTypeOfRoad
+     * @param quadrant
+     * @param generatingPathway
+     * @param licensePlate
+     */
     public Address(String city, String neighborhood, String addressTypeOfRoad, String quadrant,
             String generatingPathway, String licensePlate) {
         this.city = city;

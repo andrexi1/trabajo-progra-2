@@ -10,6 +10,13 @@ import java.util.List;
 public class Supplier extends Person{
     private String webSite;
 
+    /**
+     * @param name
+     * @param rut
+     * @param numberPhone
+     * @param addresses
+     * @param webSite
+     */
     public Supplier(String name, double rut, int numberPhone, List<Address> addresses, String webSite) {
         super(name, rut, numberPhone, addresses);
         this.webSite = webSite;

@@ -13,9 +13,15 @@ public class Person  {
     private int numberPhone;
     private List<Address> addresses;
 
-    
-    
 
+
+    
+    /**
+     * @param name
+     * @param rut
+     * @param numberPhone
+     * @param addresses
+     */
     public Person(String name, double rut, int numberPhone, List<Address> addresses) {
         this.name = name;
         this.rut = rut;

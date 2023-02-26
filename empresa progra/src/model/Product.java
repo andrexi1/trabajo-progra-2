@@ -1,5 +1,10 @@
 package model;
 
+/*
+ * @author Andres barrera-Javier Lopez-Diego Patiño
+ * 
+ */
+
 public class Product {
     private int id;
     private int currentPrice;

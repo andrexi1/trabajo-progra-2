@@ -1,5 +1,10 @@
 package model;
 
+/*
+ * @author Andres barrera-Javier Lopez-Diego Patiño
+ * 
+ */
+
 public class Person  {
     private String name;
     private double rut;

@@ -9,9 +9,11 @@ import java.util.List;
  */
 
 public class SuperMarket {
+    
     private List<Product> newProduct;
     private List<Customer> personCustomer;
     private List<Supplier> personSupplier;
+
     /**
      * @param newProduct
      * @param personCustomer
@@ -23,24 +25,28 @@ public class SuperMarket {
         this.personCustomer = personCustomer;
         this.personSupplier = personSupplier;
     }
+
     /**
      * @return
      */
     public List<Product> getNewProduct() {
         return newProduct;
     }
+
     /**
      * @param newProduct
      */
     public void setNewProduct(List<Product> newProduct) {
         this.newProduct = newProduct;
     }
+
     /**
      * @return
      */
     public List<Customer> getPersonCustomer() {
         return personCustomer;
     }
+
     /**
      * @param personCustomer
      */

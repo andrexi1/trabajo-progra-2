@@ -6,6 +6,7 @@ package model;
  */
 
 public class Address {
+    
     private String city;
     private String neighborhood;
     private String addressTypeOfRoad;

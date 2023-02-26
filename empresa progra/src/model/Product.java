@@ -6,23 +6,24 @@ package model;
  */
 
 public class Product {
+    
     private int id;
     private int currentPrice;
     private int stock;
-    private Supplier[] personSupplier;
+    private Supplier personSupplier;
+    private String category;
 
-    /**
-     * @param id
-     * @param currentPrice
-     * @param stock
-     * @param personSupplier
-     */
-    public Product(int id, int currentPrice, int stock, Supplier[] personSupplier) {
+
+    public Product(int id, int currentPrice, int stock, Supplier personSupplier, String category) {
         this.id = id;
         this.currentPrice = currentPrice;
         this.stock = stock;
         this.personSupplier = personSupplier;
+        this.category = category;
     }
+
+    
+
 
     /**
      * @return int return the id
@@ -67,17 +68,31 @@ public class Product {
     }
 
     /**
-     * @return Supplier[] return the personSupplier
+     * @return Supplier return the personSupplier
      */
-    public Supplier[] getPersonSupplier() {
+    public Supplier getPersonSupplier() {
         return personSupplier;
     }
 
     /**
      * @param personSupplier the personSupplier to set
      */
-    public void setPersonSupplier(Supplier[] personSupplier) {
+    public void setPersonSupplier(Supplier personSupplier) {
         this.personSupplier = personSupplier;
+    }
+
+    /**
+     * @return String return the category
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    /**
+     * @param category the category to set
+     */
+    public void setCategory(String category) {
+        this.category = category;
     }
 
 }

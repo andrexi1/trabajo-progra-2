@@ -8,6 +8,7 @@ import java.util.List;
  */
 
 public class Person  {
+    
     private String name;
     private double rut;
     private int numberPhone;

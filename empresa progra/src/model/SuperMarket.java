@@ -98,9 +98,30 @@ public class SuperMarket {
         return (Product) newProduct;
     }
 
+
+    public void createCustomer(String name, double rut, int numberPhone, List<Address> addresses){
+        Customer customer = new Customer(name, rut, numberPhone, addresses);
+        addCustomer(customer);
+    }
+
+    public void addCustomer(Customer customer) {
+        try {
+            FileWriter fileWriter = new FileWriter("empresa progra/src/resources/customers.txt", true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(customer.getName() + "," + customer.getRut() + "," + customer.getNumberPhone() + "," + customer.getAddresses() + "\n");
+            bufferedWriter.close();
+        } catch (IOException e) {
+            //No debe imprimir acá
+            System.out.println("Error al escribir en el archivo: " + e.getMessage());
+        }
+    }
+
+
     @Override
     public String toString() {
         return "SuperMarket [newProduct=" + newProduct + ", personCustomer=" + personCustomer + ", personSupplier="
                 + personSupplier + "]";
     }
+
+
 }

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cce4f26-fd42-412b-a8a1-eac9f7c6ef94" name="Changes" comment="" />
+    <list default="true" id="5ba2df70-a459-424f-b9f4-ff442433d6c3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,26 +16,73 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2MBz2LcOS1HcHilXHBMLTX0c1z7" />
+  <component name="ProjectId" id="2MIE49VXt6UZsO5KiGTqStrvPAu" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Programacion/Repositorio/trabajo-progra-2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="Application.Presenter">
+    <configuration name="Customer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.Customer" />
+      <module name="trabajo-progra-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Presenter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="presenter.Presenter" />
+      <module name="trabajo-progra-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="presenter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SuperMarket" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.SuperMarket" />
+      <module name="trabajo-progra-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Presenter" />
+        <item itemvalue="Application.Customer" />
+        <item itemvalue="Application.SuperMarket" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0cce4f26-fd42-412b-a8a1-eac9f7c6ef94" name="Changes" comment="" />
-      <created>1677255560584</created>
+      <changelist id="5ba2df70-a459-424f-b9f4-ff442433d6c3" name="Changes" comment="" />
+      <created>1677446505864</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1677255560584</updated>
+      <updated>1677446505864</updated>
     </task>
     <servers />
   </component>

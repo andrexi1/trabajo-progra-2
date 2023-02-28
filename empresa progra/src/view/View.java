@@ -13,6 +13,17 @@ public class View {
         int number = Integer.parseInt(console.nextLine());
         return number;
     }
+    public double readDouble(String message) {
+        System.out.println(message);
+        double number = Double.valueOf(console.nextLine());
+        return number;
+    }
+
+    public String readString(String message){
+        System.out.println(message);
+        String string = console.nextLine();
+        return string;
+    }
 
     public void showMessage(String message) {
         System.out.println(message);

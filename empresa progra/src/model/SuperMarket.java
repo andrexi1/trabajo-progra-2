@@ -99,7 +99,9 @@ public class SuperMarket {
     }
 
 
-    public void createCustomer(String name, double rut, int numberPhone, List<Address> addresses){
+    public void createCustomer(String name, double rut, int numberPhone, Address address){
+        List <Address> addresses = new ArrayList<>();
+        addresses.add(address);
         Customer customer = new Customer(name, rut, numberPhone, addresses);
         addCustomer(customer);
     }
@@ -115,6 +117,31 @@ public class SuperMarket {
             System.out.println("Error al escribir en el archivo: " + e.getMessage());
         }
     }
+
+    public void createSuplier (String name, double rut, int numberPhone, List<Address> addresses, String webSite){
+        Supplier supplier = new Supplier(name, rut, numberPhone, addresses, webSite);
+        addSuplier(supplier);
+    }
+
+    private void addSuplier(Supplier supplier) {
+        try {
+            FileWriter fileWriter = new FileWriter("empresa progra/src/resources/suppliers.txt", true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(supplier.getName() + "," + supplier.getRut() + "," + supplier.getNumberPhone() + "," + supplier.getAddresses() + "," + supplier.getWebSite() +  "\n");
+            bufferedWriter.close();
+        } catch (IOException e) {
+            //No debe imprimir acá
+            System.out.println("Error al escribir en el archivo: " + e.getMessage());
+        }
+    }
+
+    public List<Address> createAddress(String city, String neighborhood, String addressTypeOfRoad, String quadrant, String generatingPathway, String licensePlate){
+        Address address = new Address(city,neighborhood,addressTypeOfRoad,quadrant,generatingPathway,licensePlate);
+        List<Address> addresses = new ArrayList<>();
+        addresses.add(address);
+        return addresses;
+    }
+
 
 
     @Override

@@ -1,2 +1,1 @@
-Luis,5.0,312,null
-Javier,5.0,312,null
+Carlos,312.0,350,[Address [city=Tunja, neighborhood=Muiscas, addressTypeOfRoad=AV, quadrant=31, generatingPathway=25, licensePlate=13]]

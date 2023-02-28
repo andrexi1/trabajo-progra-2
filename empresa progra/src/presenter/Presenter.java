@@ -2,8 +2,10 @@ package presenter;
 
 import model.Address;
 import model.SuperMarket;
+import model.Supplier;
 import view.View;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +18,7 @@ public class Presenter {
         superMarket = new SuperMarket();
     }
 
-    public void showMenu(){
+    public void showMenu() throws IOException {
         view.showMessage("Menu \n 1.Crear cliente\n 2.Crear proveedor \n 3.Crear Producto \n 4.Crear venta \n 5.Ver las ventas totales \n 6.Salir");
         int option = view.readInt("Ingrese una opcion");
 
@@ -29,15 +31,17 @@ public class Presenter {
                 break;
 
             case 2:
-                superMarket.createSuplier(view.readString("Ingrese el nombre"), view.readDouble("Ingrese el numero del RUT"), view.readInt("Ingrese el número de telefono"), createAddresseses(), view.readString("Ingrese el sitio web"));
+                superMarket.createSupplier(view.readString("Ingrese el nombre"), view.readDouble("Ingrese el numero del RUT"), view.readInt("Ingrese el número de telefono"), createAddresseses(), view.readString("Ingrese el sitio web"));
                 view.showMessage("Proveedor creado exitosamente");
                 showMenu();
                 break;
 
-            /*case 3:
+            case 3:
+                superMarket.createProduct(view.readString("Ingrese el nombre"), view.readInt("Ingrese el ID"), view.readInt("Ingrese el precio"), view.readInt("Ingrese el stock"), createSupplier(), view.readString("Ingrese categoria"));
                 showMenu();
                 break;
-            case 4:
+
+            /*case 4:
 
                 showMenu();
                 break;
@@ -65,11 +69,16 @@ public class Presenter {
         return addresses;
     }
 
-    public void run(){
+    public Supplier createSupplier(){
+        Supplier supplier = new Supplier(view.readString("Ingrese el nombre"), view.readDouble("Ingrese el numero del RUT"), view.readInt("Ingrese el número de telefono"), createAddresseses(), view.readString("Ingrese el sitio web"));
+        return supplier;
+    }
+
+    public void run() throws IOException {
         showMenu();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         new Presenter().run();
     }
 }

@@ -2,7 +2,6 @@ package model;
 
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -74,28 +73,27 @@ public class SuperMarket {
         this.personSupplier = personSupplier;
     }
 
-    /**
-     * @param productSell
-     * @return
-     * @throws IOException
-     */
-    public Product addProduct(Product productSell) throws IOException {
-        newProduct = new ArrayList<>() ;
-        newProduct.add(productSell);
-        File archive = new File("product.txt");
-        if(!archive.exists()){
-            try {
-                archive.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }else{
-            try (BufferedWriter archiveProduct = new BufferedWriter(new FileWriter("product.txt",true))) {
-                archiveProduct.write(String.valueOf(productSell));
-            }
+    //Crea Producto
+    public void createProduct(String name, int id, int currentPrice, int stock, Supplier personSupplier, String category) throws IOException {
+        Product product = new Product(name, id, currentPrice, stock, personSupplier, category);
+        addProduct(product);
+    }
+
+    //Añadir producto
+    public void addProduct(Product product) throws IOException {
+        newProduct = new ArrayList<>();
+        newProduct.add(product);
+
+        try {
+            FileWriter fileWriter = new FileWriter("empresa progra/src/resources/product.txt", true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(product.getName() + "," + product.getId() + "," + product.getCurrentPrice() + "," + product.getStock() + "," + product.getPersonSupplier() + "," + product.getCategory() + "\n");
+            addSupplier(product.getPersonSupplier());
+            bufferedWriter.close();
+        } catch (IOException e) {
+            //No debe imprimir acá
+            System.out.println("Error al escribir en el archivo: " + e.getMessage());
         }
-        
-        return (Product) newProduct;
     }
 
 
@@ -118,12 +116,13 @@ public class SuperMarket {
         }
     }
 
-    public void createSuplier (String name, double rut, int numberPhone, List<Address> addresses, String webSite){
+    public Supplier createSupplier (String name, double rut, int numberPhone, List<Address> addresses, String webSite){
         Supplier supplier = new Supplier(name, rut, numberPhone, addresses, webSite);
-        addSuplier(supplier);
+        addSupplier(supplier);
+        return supplier;
     }
 
-    private void addSuplier(Supplier supplier) {
+    private void addSupplier(Supplier supplier) {
         try {
             FileWriter fileWriter = new FileWriter("empresa progra/src/resources/suppliers.txt", true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);

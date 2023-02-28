@@ -1,1 +1,3 @@
 Carlos,312.0,350,[Address [city=Tunja, neighborhood=Muiscas, addressTypeOfRoad=AV, quadrant=31, generatingPathway=25, licensePlate=13]]
+Carros,123,3000,2,Supplier [webSite=carros.com],Caroos
+Carro,123,3000,2,Supplier [webSite=caroos.com],Autos

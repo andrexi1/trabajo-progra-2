@@ -1,1 +1,2 @@
 Alitas,312.0,123,null,alitas.com
+Frutas,312.0,3125,[Address [city=Bogota, neighborhood=Simon Bolivar, addressTypeOfRoad=Av, quadrant=3, generatingPathway=5, licensePlate=123]],Frutas.com

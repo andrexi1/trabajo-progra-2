@@ -21,7 +21,8 @@ public class SuperMarket {
 	}
 
 	/**
-	 * Estee es el metodo conscructor de la clase. 
+	 * Estee es el metodo conscructor de la clase.
+	 * 
 	 * @param newProduct
 	 * @param personCustomer
 	 * @param personSupplier
@@ -83,6 +84,7 @@ public class SuperMarket {
 
 	/**
 	 * Este metodo nos permite añadir y almacenar un prducto.
+	 * 
 	 * @param product
 	 * @throws IOException
 	 */
@@ -102,8 +104,10 @@ public class SuperMarket {
 			System.out.println("Error al escribir en el archivo: " + e.getMessage());
 		}
 	}
+
 	/**
-	 * Este metodo nos permite crear y almacenar un cliente. 
+	 * Este metodo nos permite crear y almacenar un cliente.
+	 * 
 	 * @param name
 	 * @param rut
 	 * @param numberPhone
@@ -115,8 +119,10 @@ public class SuperMarket {
 		Customer customer = new Customer(name, rut, numberPhone, addresses);
 		addCustomer(customer);
 	}
+
 	/**
-	 * Este metodo nos permite añadir y alacenar un cliente. 
+	 * Este metodo nos permite añadir y alacenar un cliente.
+	 * 
 	 * @param customer
 	 */
 	public void addCustomer(Customer customer) {
@@ -131,8 +137,10 @@ public class SuperMarket {
 			System.out.println("Error al escribir en el archivo: " + e.getMessage());
 		}
 	}
+
 	/**
-	 * Este metodo nos permite crear un proveedor. 
+	 * Este metodo nos permite crear un proveedor.
+	 * 
 	 * @param name
 	 * @param rut
 	 * @param numberPhone
@@ -145,11 +153,14 @@ public class SuperMarket {
 		addSupplier(supplier);
 		return supplier;
 	}
+
 	/**
-	 * Este metodo nos añade y almacena un proveedor. 
+	 * Este metodo nos añade y almacena un proveedor.
+	 * 
 	 * @param supplier
+	 * @throws IOException
 	 */
-	private void addSupplier(Supplier supplier) {
+	private void addSupplier(Supplier supplier) throws IOException {
 		try {
 			FileWriter fileWriter = new FileWriter("empresa progra/src/resources/suppliers.txt", true);
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
@@ -157,12 +168,13 @@ public class SuperMarket {
 					+ supplier.getAddresses() + "," + supplier.getWebSite() + "\n");
 			bufferedWriter.close();
 		} catch (IOException e) {
-			// No debe imprimir acá
-			System.out.println("Error al escribir en el archivo: " + e.getMessage());
+			throw e;
 		}
 	}
+
 	/**
-	 * Este metodo nos permite crear objetos de la clase Addres. 
+	 * Este metodo nos permite crear objetos de la clase Addres.
+	 * 
 	 * @param city
 	 * @param neighborhood
 	 * @param addressTypeOfRoad
@@ -178,8 +190,10 @@ public class SuperMarket {
 		addresses.add(address);
 		return addresses;
 	}
+
 	/**
-	 * Este es el metodo que nos convierte a una cadena de Strings los datos de SuperMarket.
+	 * Este es el metodo que nos convierte a una cadena de Strings los datos de
+	 * SuperMarket.
 	 */
 	@Override
 	public String toString() {

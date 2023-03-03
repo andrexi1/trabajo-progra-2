@@ -1,4 +1,4 @@
-package view;
+package com.edu.uptc.prgII.Enterprice.view;
 import java.util.Scanner;
 
 public class View {

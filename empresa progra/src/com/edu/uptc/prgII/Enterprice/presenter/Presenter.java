@@ -1,7 +1,5 @@
 package com.edu.uptc.prgII.Enterprice.presenter;
 
-import view.View;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +7,7 @@ import java.util.List;
 import com.edu.uptc.prgII.Enterprice.model.Address;
 import com.edu.uptc.prgII.Enterprice.model.SuperMarket;
 import com.edu.uptc.prgII.Enterprice.model.Supplier;
+import com.edu.uptc.prgII.Enterprice.view.View;
 
 public class Presenter {
     private View view;

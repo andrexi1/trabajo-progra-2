@@ -1,4 +1,4 @@
-package com.edu.uptc.prgII.Enterprice.model;
+package model;
 
 /*
  * @author Andres barrera-Javier Lopez-Diego Patiño

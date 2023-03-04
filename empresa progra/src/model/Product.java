@@ -1,4 +1,4 @@
-package com.edu.uptc.prgII.Enterprice.model;
+package model;
 
 /*
  * @author Andres barrera-Javier Lopez-Diego Patiño
@@ -7,12 +7,13 @@ package com.edu.uptc.prgII.Enterprice.model;
 
 public class Product {
 
-	private String name;
+private String name;
 	private int id;
 	private int currentPrice;
 	private int stock;
 	private Supplier personSupplier;
 	private String category;
+	private int quantitySold;
 
 	/**
 	 * Este es el metodo constructor de la clase. 
@@ -31,6 +32,7 @@ public class Product {
 		this.personSupplier = personSupplier;
 		this.category = category;
 	}
+
 
 	/**
 	 * @return int return the id
@@ -121,5 +123,16 @@ public class Product {
 		return "Product [name=" + name + ", id=" + id + ", currentPrice=" + currentPrice + ", stock=" + stock
 				+ ", personSupplier=" + personSupplier + ", category=" + category + "]";
 	}
+        
+	public void setQuantitySold(int quantitySold) {
+        this.quantitySold = quantitySold;
+	
+    }
+
+	public int getQuantitySold() {
+    		return quantitySold;
+	
+    }
+
 
 }

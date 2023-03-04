@@ -1,20 +1,16 @@
-package com.edu.uptc.prgII.Enterprice.presenter;
+package presenter;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.edu.uptc.prgII.Enterprice.model.Address;
-import com.edu.uptc.prgII.Enterprice.model.SuperMarket;
-import com.edu.uptc.prgII.Enterprice.model.Supplier;
-import com.edu.uptc.prgII.Enterprice.view.View;
-/*
- * @author Andres barrera-Javier Lopez-Diego Patiño
- * 
- */
+import model.Address;
+import model.SuperMarket;
+import model.Supplier;
+import view.View;
 
 public class Presenter {
-	private View view;
+private View view;
 	private SuperMarket superMarket;
 
 	public Presenter() {
@@ -29,13 +25,9 @@ public class Presenter {
 
 		switch (option) {
 		case 1:
-			// Crea el cliente pidiendole al usuario los datos. Falta conectar la direccion
-			// view.readString("Ingrese la ciudad"), view.readString("Ingrese el barrio"),
-			// view.readString("Ingrese el tipo de via"), view.readString("Ingrese el
-			// cuadrante"), view.readString("Ingrese el numero de via generdora"),
-			// view.readString("Ingrese el numero de placa")
+
 			superMarket.createCustomer(view.readString("Ingrese el nombre"),
-					view.readDouble("Ingrese el numero del RUT"), view.readInt("Ingrese el número de telefono"),
+					view.readDouble("Ingrese el numero del RUT"), view.readInt("Ingrese el nÃºmero de telefono"),
 					createAddresses());
 			view.showMessage("Cliente creado exitosamente");
 			showMenu();
@@ -43,7 +35,7 @@ public class Presenter {
 
 		case 2:
 			superMarket.createSupplier(view.readString("Ingrese el nombre"),
-					view.readDouble("Ingrese el numero del RUT"), view.readInt("Ingrese el número de telefono"),
+					view.readDouble("Ingrese el numero del RUT"), view.readInt("Ingrese el nÃºmero de telefono"),
 					createAddresseses(), view.readString("Ingrese el sitio web"));
 			view.showMessage("Proveedor creado exitosamente");
 			showMenu();
@@ -56,13 +48,11 @@ public class Presenter {
 			showMenu();
 			break;
 
-		/*
-		 * case 4:
-		 * 
-		 * showMenu(); break; case 5:
-		 * 
-		 * showMenu(); break;
-		 */
+		
+		case 4:
+			addSell();
+			showMenu();
+			break;
 
 		case 6:
 			System.exit(0);
@@ -90,14 +80,41 @@ public class Presenter {
 
 	public Supplier createSupplier() {
 		Supplier supplier = new Supplier(view.readString("Ingrese el nombre"),
-				view.readDouble("Ingrese el numero del RUT"), view.readInt("Ingrese el número de telefono"),
+				view.readDouble("Ingrese el numero del RUT"), view.readInt("Ingrese el nÃºmero de telefono"),
 				createAddresseses(), view.readString("Ingrese el sitio web"));
 		return supplier;
 	}
 
+	private void addSell(){
+        view.showMessage("\n *AÃ±adir venta de:* \n");
+        if (SuperMarket.isEmptyInventory() != false) {
+            view.showMessage("\n_______El Inventario Esta Vacio_______\n");
+        } else {
+            view.showListProducts(SuperMarket.toStringVa());
+            int option;
+            do {
+                option = view.readInt("Por Favor Elija Producto a Vender");
+                if (option >= 1 && option <= SuperMarket.countProducts()) {
+                    view.showMessage("**La opcion no es valida**");
+                }
+            } while (option < 1 || option > SuperMarket.countProducts());
+            //aÃ±adir venta
+            int quantity;
+            boolean isValidSell;
+            do {
+                quantity = view.readInt("Cantidad Vendida");
+                isValidSell = !SuperMarket.addSell(option, quantity);
+                if (!isValidSell) {
+                    view.showMessage("**La Cantidad no es valida**");
+                }
+            } while (!isValidSell);
+        }
+    }
+
 	public void run() throws IOException {
 		showMenu();
 	}
+
 
 	public static void main(String[] args) throws IOException {
 		new Presenter().run();

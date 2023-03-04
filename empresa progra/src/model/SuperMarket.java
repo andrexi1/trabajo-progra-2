@@ -1,4 +1,4 @@
-package com.edu.uptc.prgII.Enterprice.model;
+package model;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -7,15 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
+
  * @author Andres barrera-Javier Lopez-Diego Patiño
  * 
  */
 
 public class SuperMarket {
 
-	private List<Product> newProduct;
-	private List<Customer> personCustomer;
-	private List<Supplier> personSupplier;
+	private static List<Product> newProduct;
+	private static List<Customer> personCustomer;
+	private static List<Supplier> personSupplier;
 
 	public SuperMarket() {
 	}
@@ -75,7 +76,17 @@ public class SuperMarket {
 		this.personSupplier = personSupplier;
 	}
 
-	// Crea Producto
+	/**
+	 * Este metodo crea productos y los almacena.
+	 * 
+	 * @param name
+	 * @param id
+	 * @param currentPrice
+	 * @param stock
+	 * @param personSupplier
+	 * @param category
+	 * @throws IOException
+	 */
 	public void createProduct(String name, int id, int currentPrice, int stock, Supplier personSupplier,
 			String category) throws IOException {
 		Product product = new Product(name, id, currentPrice, stock, personSupplier, category);
@@ -93,8 +104,9 @@ public class SuperMarket {
 		newProduct.add(product);
 
 		try {
-			FileWriter fileWriter = new FileWriter("empresa progra/src/resources/product.txt", true);
-			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+			FileWriter fileWriter = new FileWriter("./src/resources/product.txt", true);
+			BufferedWriter bufferedWriter;
+                    bufferedWriter = new BufferedWriter(fileWriter);
 			bufferedWriter.write(product.getName() + "," + product.getId() + "," + product.getCurrentPrice() + ","
 					+ product.getStock() + "," + product.getPersonSupplier() + "," + product.getCategory() + "\n");
 			addSupplier(product.getPersonSupplier());
@@ -127,8 +139,9 @@ public class SuperMarket {
 	 */
 	public void addCustomer(Customer customer) {
 		try {
-			FileWriter fileWriter = new FileWriter("empresa progra/src/resources/customers.txt", true);
-			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+			FileWriter fileWriter = new FileWriter("./src/resources/customers.txt", true);
+			BufferedWriter bufferedWriter;
+                    bufferedWriter = new BufferedWriter(fileWriter);
 			bufferedWriter.write(customer.getName() + "," + customer.getRut() + "," + customer.getNumberPhone() + ","
 					+ customer.getAddresses() + "\n");
 			bufferedWriter.close();
@@ -158,19 +171,39 @@ public class SuperMarket {
 	 * Este metodo nos añade y almacena un proveedor.
 	 * 
 	 * @param supplier
-	 * @throws IOException
 	 */
-	private void addSupplier(Supplier supplier) throws IOException {
+	private void addSupplier(Supplier supplier) {
 		try {
-			FileWriter fileWriter = new FileWriter("empresa progra/src/resources/suppliers.txt", true);
-			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+			FileWriter fileWriter = new FileWriter("./src/resources/suppliers.txt", true);
+			BufferedWriter bufferedWriter;
+                    bufferedWriter = new BufferedWriter(fileWriter);
 			bufferedWriter.write(supplier.getName() + "," + supplier.getRut() + "," + supplier.getNumberPhone() + ","
 					+ supplier.getAddresses() + "," + supplier.getWebSite() + "\n");
 			bufferedWriter.close();
 		} catch (IOException e) {
-			throw e;
+			System.out.println("Error al escribir en el archivo: " + e.getMessage());
 		}
 	}
+	public static  boolean addSell(int product, int quantity) {
+		for (Product item : newProduct) {
+			if (quantity>0 && quantity<= item.getStock()){
+				item.setStock(item.getStock()-quantity);
+				item.setQuantitySold(item.getQuantitySold()+ quantity);
+				return true ;
+			}
+
+		}
+		return false ;
+    }
+
+public static boolean isEmptyInventory() {
+            return newProduct.isEmpty();
+    }
+
+	public static int countProducts() {
+        return newProduct.size();
+    }
+
 
 	/**
 	 * Este metodo nos permite crear objetos de la clase Addres.
@@ -195,8 +228,7 @@ public class SuperMarket {
 	 * Este es el metodo que nos convierte a una cadena de Strings los datos de
 	 * SuperMarket.
 	 */
-	@Override
-	public String toString() {
+	public static String toStringVa() {
 		return "SuperMarket [newProduct=" + newProduct + ", personCustomer=" + personCustomer + ", personSupplier="
 				+ personSupplier + "]";
 	}

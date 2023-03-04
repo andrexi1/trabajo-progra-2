@@ -1,4 +1,4 @@
-package com.edu.uptc.prgII.Enterprice.view;
+package view;
 
 import java.util.Scanner;
 /*
@@ -35,7 +35,13 @@ public class View {
 		return string;
 	}
 
+	public void showListProducts(String ListProducts){
+        System.out.println(ListProducts);
+    }
+
 	public void showMessage(String message) {
 		System.out.println(message);
 	}
+
+
 }

@@ -1,4 +1,4 @@
-package com.edu.uptc.prgII.Enterprice.model;
+package model;
 
 import java.util.List;
 

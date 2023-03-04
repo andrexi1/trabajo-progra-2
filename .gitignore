@@ -535,3 +535,6 @@ MigrationBackup/
 .ionide/
 
 # End of https://www.toptal.com/developers/gitignore/api/vs,eclipse,intellij
+/empresa progra/nbproject/private/
+/empresa progra/build/
+/empresa progra/dist/

@@ -1,3 +1,5 @@
 Carlos,312.0,350,[Address [city=Tunja, neighborhood=Muiscas, addressTypeOfRoad=AV, quadrant=31, generatingPathway=25, licensePlate=13]]
 Carros,123,3000,2,Supplier [webSite=carros.com],Caroos
 Carro,123,3000,2,Supplier [webSite=caroos.com],Autos
+diego,852.0,963,[Address [city=duitama, neighborhood=oporto, addressTypeOfRoad=cr, quadrant=5, generatingPathway=5, licensePlate=65]]
+ddd,963.0,85522,[Address [city=ddd, neighborhood=dd, addressTypeOfRoad=6, quadrant=6, generatingPathway=6, licensePlate=65]]

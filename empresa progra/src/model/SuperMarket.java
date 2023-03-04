@@ -29,9 +29,9 @@ public class SuperMarket {
 	 * @param personSupplier
 	 */
 	public SuperMarket(List<Product> newProduct, List<Customer> personCustomer, List<Supplier> personSupplier) {
-		this.newProduct = newProduct;
-		this.personCustomer = personCustomer;
-		this.personSupplier = personSupplier;
+		SuperMarket.newProduct = newProduct;
+		SuperMarket.personCustomer = personCustomer;
+		SuperMarket.personSupplier = personSupplier;
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class SuperMarket {
 	 * @param newProduct
 	 */
 	public void setNewProduct(List<Product> newProduct) {
-		this.newProduct = newProduct;
+		SuperMarket.newProduct = newProduct;
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class SuperMarket {
 	 * @param personCustomer
 	 */
 	public void setPersonCustomer(List<Customer> personCustomer) {
-		this.personCustomer = personCustomer;
+		SuperMarket.personCustomer = personCustomer;
 	}
 
 	/**
@@ -73,7 +73,7 @@ public class SuperMarket {
 	 * @param personSupplier
 	 */
 	public void setPersonSupplier(List<Supplier> personSupplier) {
-		this.personSupplier = personSupplier;
+		SuperMarket.personSupplier = personSupplier;
 	}
 
 	/**
@@ -104,9 +104,9 @@ public class SuperMarket {
 		newProduct.add(product);
 
 		try {
-			FileWriter fileWriter = new FileWriter("./src/resources/product.txt", true);
+			FileWriter fileWriter = new FileWriter("C:\\Users\\Diego Patiño\\Documents\\GitHub\\trabajo-progra-2\\empresa progra\\src\\resources\\product.txt", true);
 			BufferedWriter bufferedWriter;
-                    bufferedWriter = new BufferedWriter(fileWriter);
+			bufferedWriter = new BufferedWriter(fileWriter);
 			bufferedWriter.write(product.getName() + "," + product.getId() + "," + product.getCurrentPrice() + ","
 					+ product.getStock() + "," + product.getPersonSupplier() + "," + product.getCategory() + "\n");
 			addSupplier(product.getPersonSupplier());
@@ -139,9 +139,9 @@ public class SuperMarket {
 	 */
 	public void addCustomer(Customer customer) {
 		try {
-			FileWriter fileWriter = new FileWriter("./src/resources/customers.txt", true);
+			FileWriter fileWriter = new FileWriter("C:\\Users\\Diego Patiño\\Documents\\GitHub\\trabajo-progra-2\\empresa progra\\src\\resources\\customers.txt", true);
 			BufferedWriter bufferedWriter;
-                    bufferedWriter = new BufferedWriter(fileWriter);
+			bufferedWriter = new BufferedWriter(fileWriter);
 			bufferedWriter.write(customer.getName() + "," + customer.getRut() + "," + customer.getNumberPhone() + ","
 					+ customer.getAddresses() + "\n");
 			bufferedWriter.close();
@@ -174,9 +174,9 @@ public class SuperMarket {
 	 */
 	private void addSupplier(Supplier supplier) {
 		try {
-			FileWriter fileWriter = new FileWriter("./src/resources/suppliers.txt", true);
+			FileWriter fileWriter = new FileWriter("C:\\Users\\Diego Patiño\\Documents\\GitHub\\trabajo-progra-2\\empresa progra\\src\\resources\\suppliers.txt", true);
 			BufferedWriter bufferedWriter;
-                    bufferedWriter = new BufferedWriter(fileWriter);
+			bufferedWriter = new BufferedWriter(fileWriter);
 			bufferedWriter.write(supplier.getName() + "," + supplier.getRut() + "," + supplier.getNumberPhone() + ","
 					+ supplier.getAddresses() + "," + supplier.getWebSite() + "\n");
 			bufferedWriter.close();
@@ -184,26 +184,36 @@ public class SuperMarket {
 			System.out.println("Error al escribir en el archivo: " + e.getMessage());
 		}
 	}
-	public static  boolean addSell(int product, int quantity) {
+
+	public static boolean addSell(int product, int quantity) {
 		for (Product item : newProduct) {
-			if (quantity>0 && quantity<= item.getStock()){
-				item.setStock(item.getStock()-quantity);
-				item.setQuantitySold(item.getQuantitySold()+ quantity);
-				return true ;
+			if (quantity > 0 && quantity <= item.getStock()) {
+				item.setStock(item.getStock() - quantity);
+				item.setQuantitySold(item.getQuantitySold() + quantity);
+				return true;
 			}
 
 		}
-		return false ;
-    }
+		return false;
+	}
 
-public static boolean isEmptyInventory() {
-            return newProduct.isEmpty();
-    }
+	/**
+	 * Este metodo nos permite revisar si el inventario esta vacio.
+	 * 
+	 * @return retorna un boolean que denota si esta vacio o no el inventario.
+	 */
+	public static boolean isEmptyInventory() {
+		return newProduct.isEmpty();
+	}
 
+	/**
+	 * Este metodo nos permite identificar el numero de productos disponibles.
+	 * 
+	 * @return retorna un entero que denota los productos disponibles.
+	 */
 	public static int countProducts() {
-        return newProduct.size();
-    }
-
+		return newProduct.size();
+	}
 
 	/**
 	 * Este metodo nos permite crear objetos de la clase Addres.
